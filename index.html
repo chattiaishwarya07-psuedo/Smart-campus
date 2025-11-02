@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CampusHub — Modern Campus Portal (Frontend-only)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="left">
+        <button id="menuBtn" style="display:none" class="icon-btn"></button>
+        <div class="brand">MVSR HUB</div>
+      </div>
+
+      <div class="search">
+        <input id="searchInput" placeholder="Search events, announcements, clubs..." />
+      </div>
+
+      <div class="right">
+        <select id="roleSwitch" title="Switch role">
+          <option value="student">Student</option>
+          <option value="club">Club</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button id="notifBtn" style="display:none" title="AI Summary" class="outline">AI Summary</button>
+        <div id="userBadge" class="user-badge">A</div>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-top">
+          <div class="profile">
+            <div id="profileAvatar" class="avatar">A</div>
+            <div>
+              <div id="profileName">Asha Patel</div>
+              <div id="profileRole" class="muted">Student • CS</div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button data-route="dashboard" class="active">Dashboard</button>
+          <button data-route="events">Events</button>
+          <button data-route="announcements">Announcements</button>
+          <button data-route="noticeboard">Noticeboard</button>
+          <button data-route="timetable">Timetable</button>
+          <button data-route="leaderboard">Leaderboard</button>
+          <button data-route="lostfound">Lost & Found</button>
+          <button data-route="profile">Profile</button>
+        </nav>
+
+        <div class="filters card">
+          <h4>Filters</h4>
+          <label>Department
+            <select id="filterDept"><option>All</option><option>CS</option><option>MECH</option><option>CIVIL</option></select>
+          </label>
+          <label>Club
+            <select id="filterClub"><option>All</option><option>Photography Club</option></select>
+          </label>
+          <label>Type
+            <select id="filterType"><option>All</option><option>Workshop</option><option>General</option></select>
+          </label>
+        </div>
+      </aside>
+
+      <section class="content" id="content">
+        <!-- Views injected by JS -->
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© CampusHub • Frontend Demo • No backend required</div>
+    </footer>
+
+    <div id="modal" class="modal hidden"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

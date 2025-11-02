@@ -1,0 +1,52 @@
+/* Modern CampusHub styles - dark gradient theme with glass cards */
+:root{
+  --bg:#071028; --panel:#071b2f; --muted:#9fb0c8; --accent:#2dd4bf; --accent2:#60a5fa;
+  --glass: rgba(255,255,255,0.03);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{margin:0;background:linear-gradient(180deg,#041027 0%, #071228 100%);color:#e6f0f6; -webkit-font-smoothing:antialiased;}
+.app{display:flex;flex-direction:column;min-height:100vh;}
+.topbar{display:flex;align-items:center;gap:12px;padding:12px 20px;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);border-bottom:1px solid rgba(255,255,255,0.02);}
+.topbar .left{display:flex;align-items:center;gap:12px;}
+.brand{font-weight:700;font-size:18px;color:var(--accent);}
+.icon-btn{background:transparent;border:0;color:inherit;font-size:18px;cursor:pointer;padding:8px;border-radius:8px;}
+.search{flex:1;max-width:720px;}
+.search input{width:100%;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);background:var(--glass);color:inherit;}
+.right{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.user-badge{width:36px;height:36px;border-radius:10px;background:linear-gradient(180deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#021; font-weight:700;}
+
+.main{display:flex;gap:16px;flex:1;padding:20px;}
+.sidebar{width:260px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);}
+.profile{display:flex;gap:12px;align-items:center;margin-bottom:12px;}
+.avatar{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#012;font-weight:700;font-size:18px;}
+.nav{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+.nav button{padding:10px;border-radius:10px;border:0;background:transparent;color:var(--muted);text-align:left;cursor:pointer;}
+.nav button.active{background:linear-gradient(90deg, rgba(45,212,191,0.12), rgba(96,165,250,0.08));color:var(--accent);font-weight:600;border-left:3px solid var(--accent);padding-left:8px;}
+
+.filters label{display:block;margin:8px 0;font-size:13px;color:var(--muted);}
+.filters select{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit;}
+
+.content{flex:1;padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02);min-height:480px;overflow:auto;}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);margin-bottom:12px;}
+.row{display:flex;gap:12px;align-items:center;}
+.col{display:flex;flex-direction:column;gap:8px;}
+.muted{color:var(--muted);font-size:13px;}
+.event{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);background:rgba(255,255,255,0.01);}
+.meta{font-size:13px;color:var(--muted);margin-top:6px;}
+.btn{padding:8px 12px;border-radius:10px;border:0;background:var(--accent);color:#042;cursor:pointer;font-weight:600;}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);}
+.small{padding:6px 8px;font-size:13px;border-radius:8px;}
+.outline{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:var(--muted);cursor:pointer;}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:50;padding:20px;}
+.modal .dialog{width:760px;max-width:98%;background:#061526;padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+.hidden{display:none;}
+
+/* Responsive */
+@media(max-width:980px){
+  .sidebar{display:none;position:fixed;left:0;top:60px;bottom:0;z-index:60;width:220px;}
+  .main{padding:12px;}
+}
